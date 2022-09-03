@@ -4,14 +4,14 @@
   "repository": "https://github.com/graphprotocol/uniswap-v3-subgraph",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "codegen": "graph codegen --output-dir src/types/",
-    "build": "graph build",
-    "create-local": "graph create ianlapham/uniswap-v3 --node http://127.0.0.1:8020",
-    "deploy-local": "graph deploy ianlapham/uniswap-v3 --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
-    "deploy": "graph deploy ianlapham/uniswap-v3-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
-    "deploy-dev": "graph deploy sommelier/uniswap-v3 --ipfs http://35.197.14.14:5000/ --node http://35.197.14.14:8020/ --debug",
-    "deploy-staging": "graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /Uniswap --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
-    "watch-local": "graph deploy ianlapham/uniswap-v3 --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+    "codegen": "./node_modules/@graphprotocol/graph-cli/bin/graph codegen --output-dir src/types/",
+    "build": "./node_modules/@graphprotocol/graph-cli/bin/graph build",
+    "create-gcp1": "./node_modules/@graphprotocol/graph-cli/bin/graph create yzytest/uniswap-v3 --node http://35.220.234.34:8020",
+    "deploy-gcp1": "./node_modules/@graphprotocol/graph-cli/bin/graph deploy yzytest/uniswap-v3 --debug --ipfs http://35.220.234.34:5001 --node http://35.220.234.34:8020",
+    "deploy": "./node_modules/@graphprotocol/graph-cli/bin/graph deploy ianlapham/uniswap-v3-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "deploy-dev": "./node_modules/@graphprotocol/graph-cli/bin/graph deploy sommelier/uniswap-v3 --ipfs http://35.197.14.14:5000/ --node http://35.197.14.14:8020/ --debug",
+    "deploy-staging": "./node_modules/@graphprotocol/graph-cli/bin/graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /Uniswap --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
+    "watch-local": "./node_modules/@graphprotocol/graph-cli/bin/graph deploy ianlapham/uniswap-v3 --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",
