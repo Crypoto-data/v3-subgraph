@@ -27,7 +27,7 @@ function getPosition(event: ethereum.Event, tokenId: BigInt): Position | null {
 
       position = new Position(tokenId.toString())
       // The owner gets correctly updated in the Transfer handler
-      position.owner = Address.fromString(ADDRESS_ZERO)
+      position.owner = Address.fromString(ADDRESS_ZERO).toString()
       position.pool = poolAddress.toHexString()
       position.token0 = positionResult.value2.toHexString()
       position.token1 = positionResult.value3.toHexString()
@@ -174,7 +174,7 @@ export function handleTransfer(event: Transfer): void {
     return
   }
 
-  position.owner = event.params.to
+  position.owner = event.params.to.toString();
   position.save()
 
   savePositionSnapshot(position!, event)
