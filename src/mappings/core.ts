@@ -110,9 +110,9 @@ export function handleMint(event: MintEvent): void {
   mint.pool = pool.id
   mint.token0 = pool.token0
   mint.token1 = pool.token1
-  mint.owner = event.params.owner.toString()
-  mint.sender = event.params.sender.toString()
-  mint.origin = event.transaction.from.toString()
+  mint.owner = event.params.owner.toHexString()
+  mint.sender = event.params.sender.toHexString()
+  mint.origin = event.transaction.from.toHexString()
   mint.amount = event.params.amount
   mint.amount0 = amount0
   mint.amount1 = amount1
@@ -229,8 +229,8 @@ export function handleBurn(event: BurnEvent): void {
   burn.pool = pool.id
   burn.token0 = pool.token0
   burn.token1 = pool.token1
-  burn.owner = event.params.owner.toString()
-  burn.origin = event.transaction.from.toString()
+  burn.owner = event.params.owner.toHexString()
+  burn.origin = event.transaction.from.toHexString()
   burn.amount = event.params.amount
   burn.amount0 = amount0
   burn.amount1 = amount1
@@ -388,9 +388,9 @@ export function handleSwap(event: SwapEvent): void {
   swap.pool = pool.id
   swap.token0 = pool.token0
   swap.token1 = pool.token1
-  swap.sender = event.params.sender.toString()
-  swap.origin = event.transaction.from.toString()
-  swap.recipient = event.params.recipient.toString()
+  swap.sender = event.params.sender.toHexString()
+  swap.origin = event.transaction.from.toHexString()
+  swap.recipient = event.params.recipient.toHexString()
   swap.amount0 = amount0
   swap.amount1 = amount1
   swap.amountUSD = amountTotalUSDTracked
